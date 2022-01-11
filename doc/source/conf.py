@@ -17,8 +17,8 @@ sys.path.insert(0, os.path.abspath('../..'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'prt_phasecurve'
-copyright = '2021, Aaron Schneider'
+project = 'exorad'
+copyright = '2022, Aaron Schneider'
 author = 'Aaron Schneider'
 
 # The full version, including alpha/beta/rc tags

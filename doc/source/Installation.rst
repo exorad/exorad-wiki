@@ -97,6 +97,11 @@ Install ``petitRADTRANS`` and the preprocessing package of ``exoradPRT/MITgcm`` 
     cd <directory of exorad repo>
     pip install -e exorad_opac
 
+The installation of ``exorad_opac`` will automatically trigger the installation of ``petitRADTRANS``. 
+The last step is then to install the opacity sources for ``petitRADTRANS``. 
+
+.. important:: instructions for the installation of the opacity sources can be found `here <https://petitradtrans.readthedocs.io/en/latest/content/installation.html>`_.
+
 
 
 

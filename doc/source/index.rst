@@ -1,4 +1,4 @@
-.. prt_phasecurve documentation master file, created by
+.. exorad-wiki documentation master file, created by
    sphinx-quickstart on Mon Jan 11 14:18:49 2021.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
@@ -14,7 +14,6 @@ A fast and versatile non gray 3D GCM aimed for simulating hot gas giants.
 
    Installation
    Physics
-   notebooks/tutorial.ipynb
 
 Indices and tables
 ==================
@@ -22,4 +21,4 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`search`
 
-Copyright 2022 Aaron Schneider. Feel free to contact me for any questions via `mail <mailto:Aaron.Schneider@nbi.ku.dk>`_.
+Copyright 2022 Aaron Schneider. Do not use exoradPRT/MITgcm without contacting me first. Feel free to contact me for any questions via `mail <mailto:Aaron.Schneider@nbi.ku.dk>`_.

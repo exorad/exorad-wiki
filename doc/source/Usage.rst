@@ -1,0 +1,73 @@
+Usage
+-----
+
+Quick guide
+^^^^^^^^^^^
+The easiest way to setup a new ``exoradPRT/MITgcm`` simulation is:
+
+1. create a new folder for the simulation
+2. copy the ``code`` and ``input`` folder from the supplied ``exorad_build`` folder
+3. change ``opac.yaml`` in the input folder
+4. create opacitys using the command ``exorad_opac_create`` in the simulation folder (more below)
+5. check the temperature profile using ``exorad_plot_ic``
+6. change files in code directory (e.g., ``SIZE.h`` and ``EXORAD_OPTIONS.h``)
+7. compile ``MITgcm``
+8. continue with changes to the input files (e.g., sponge layer settings, radiative timesteps, duration of simulation, ...)
+9. Have fun
+
+We will now continue in this guide to give detailed info about the individual steps 
+
+Preperation
+^^^^^^^^^^^
+.. note:: 
+
+    Please familiarise with `MITgcm <https://mitgcm.readthedocs.io/en/latest/>`_ beforehand
+
+A ``MITgcm`` run folder (see verification folders as an example) usually comes with 4 mandatory folders: ``code``, ``input``, ``run``, ``build``.
+The ``code`` folder includes all the mods that are nescessary for MITgcm to include ``exorad``.
+The ``input`` folder is the home of all config and input files. 
+The ``run`` and the ``build`` folder are used for output files and binary files respectively.
+
+You can use the ``exorad_build`` folder as an example to setup ``exoradPRT/MITgcm``. 
+
+.. code::
+
+    exorad-example-run-folder
+    ├── code   # contains the mods nescessary to load exorad
+    │   ├── CPP_OPTIONS.h
+    │   ├── DIAGNOSTICS_SIZE.h
+    │   ├── EXORAD_OPAC.h     # automatically set by the opacity script
+    │   ├── EXORAD_OPTIONS.h  # change to enable/disable flags for exorad
+    │   ├── MDSIO_BUFF_3D.h
+    │   ├── PARAMS.h
+    │   ├── SIZE.h            # change for dimensions of the grid and multiprocessing
+    │   ├── apply_forcing.F
+    │   ├── do_atmospheric_phys.F
+    │   ├── do_the_model_io.F
+    │   ├── ini_theta.F
+    │   ├── mon_init.F
+    │   ├── packages.conf
+    │   ├── packages_boot.F
+    │   ├── packages_check.F
+    │   ├── packages_error_msg.F
+    │   ├── packages_init_fixed.F
+    │   ├── packages_init_variables.F
+    │   ├── packages_print_msg.F
+    │   ├── packages_readparms.F
+    │   ├── packages_unused_msg.F
+    │   └── packages_write_pickup.F
+    ├── input  # configuration and input files
+    │   ├── data            # standard configuration file
+    │   ├── data.exo        # parameters for exorad
+    │   ├── data.exprt      # parameters for radiative transfer in exorad
+    │   ├── opac.yaml       # parameters for init of opacity and temperature
+    │   └── ...
+    ├── run     # contains all the files that are created during run
+    └── build   # used to build the MITgcm binary
+.. Created with tree.nathanfriend.io
+
+
+opac.yaml
+^^^^^^^^^
+The preproccessing of exorad using the python package ``exorad_opac`` requires a parameter file with the name ``opac.yaml`` in the ``input`` folder.
+

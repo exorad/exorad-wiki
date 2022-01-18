@@ -13,7 +13,7 @@ A fast and versatile non gray 3D GCM aimed for simulating hot gas giants.
    :caption: Contents
 
    Installation
-   Physics
+   Usage
 
 Indices and tables
 ==================

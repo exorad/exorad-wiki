@@ -1,12 +1,13 @@
 Configuration
 -------------
 
-There are three main files
+There are a few files which need to be changed depending on the planet that is to be modelled.
 
 .. toctree::
    :maxdepth: 0
    :caption: Configuration
 
-   configfile/data
-   configfile/exo
    configfile/opac
+   configfile/exo
+   configfile/exoprt
+   configfile/data

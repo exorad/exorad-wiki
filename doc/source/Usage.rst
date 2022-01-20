@@ -66,8 +66,8 @@ You can use the ``exorad_build`` folder as an example to setup ``exoradPRT/MITgc
     └── build   # used to build the MITgcm binary
 .. Created with tree.nathanfriend.io
 
+Preprocessing
+^^^^^^^^^^^^^
+Familiarise with the structure of the ``opac.yaml`` file and change it accordingly. More infos about the parameters can be found :ref:`here <opac.yaml>`.
 
-opac.yaml
-^^^^^^^^^
-The preproccessing of exorad using the python package ``exorad_opac`` requires a parameter file with the name ``opac.yaml`` in the ``input`` folder.
-
+The

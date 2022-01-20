@@ -9,11 +9,13 @@ A fast and versatile non gray 3D GCM aimed for simulating hot gas giants.
 
 
 .. toctree::
-   :maxdepth: 0
+   :maxdepth: 1
    :caption: Contents
 
    Installation
    Usage
+   Configuration
+
 
 Indices and tables
 ==================

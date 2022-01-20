@@ -68,6 +68,66 @@ You can use the ``exorad_build`` folder as an example to setup ``exoradPRT/MITgc
 
 Preprocessing
 ^^^^^^^^^^^^^
-Familiarise with the structure of the ``opac.yaml`` file and change it accordingly. More infos about the parameters can be found :ref:`here <opac.yaml>`.
 
-The
+.. warning::
+
+    Before proceeding, please familiarise with the structure of the :ref:`opac.yaml` file and change it accordingly.
+
+Once successfully installed and once all parameters in ``opac.yaml`` are set, you can invoke the preprocessing script using:
+
+.. code::
+
+   exorad_opac_create
+
+.. code::
+
+    usage: exorad_opac_create [-h] [-R RESOLUTION] [-nu]
+
+    options:
+      -h, --help            show this help message and exit
+      -R RESOLUTION, --resolution RESOLUTION
+                            specify the resolution of your wavelength grid
+      -nu, --noupdate       specify if you want to update the data file (1=True,
+                            0=False)
+
+The current standard resolution is ``S0`` (see Schneider et al. 2022 for more details).
+Possible resolutions are: ``S0``, ``S1``, ``S2`` as well as any float.
+If you choose a float value, the resolution (lambda/dlambda) will be the that float.
+
+.. note:: The script should always be invoked in the directory of your simulation (e.g., parent directory of the code, input, etc. folders).
+.. warning:: The preprocessing script changes the input ``data`` file!
+.. warning:: Perform this step BEFORE you compile ``MITgcm``. This script will change/create ``EXORAD_OPAC.h``.
+
+You may want to plot the initial temperature profile.
+There is a function for that:
+
+.. code::
+
+   exorad_plot_ic
+
+Please note, that you can still invoke the ``exorad_opac_create`` script after compilation.
+In that case, please make sure to not change any parameters that would change ``EXORAD_OPAC.h``.
+This is currently: The resolution of the vertical grid (``press_init`` section in ``opac.yaml``), of the temperature grid (``grid`` section in ``opac.yaml``) and of the wavelength grid (-R flag).
+
+If you want to use exorad concurrently with two different wavelength resolutions, you could preprocess and compile exorad twice.
+This would give you two binaries of MITgcm which you could then both use (e.g., in sequence).
+
+.. code::
+
+   exorad_opac_create -R S0
+   ... compile and rename MITgcm binary ...
+   exorad_opac_create -R S1
+   ... compile and rename MITgcm binary ...
+
+Compilation
+^^^^^^^^^^^
+.. warning:: Do the above steps, before you compile
+
+Compilation of ``exoradPRT/MITgcm`` is not different than the standard ``MITgcm`` compilation.
+The reader is referred to the ``MITgcm`` docs.
+
+Running
+^^^^^^^
+Running exoradPRT/MITgcm is like running MITgcm.
+The reader is referred to the ``MITgcm`` docs.
+

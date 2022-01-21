@@ -11,3 +11,4 @@ There are a few files which need to be changed depending on the planet that is t
    configfile/exo
    configfile/exoprt
    configfile/data
+   configfile/options

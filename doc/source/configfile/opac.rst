@@ -35,7 +35,7 @@ An example ``opac.yaml`` file can look like this:
     prt:  # Section containing arguments of the Radtrans object of petitRADTRANS
 
 
-``exoradPRT/MITgcm`` needs to know and set the incident stellar flux.
+``expeRT/MITgcm`` needs to know and set the incident stellar flux.
 The ``star`` section in ``opac.yaml`` helps to compute that.
 
 .. list-table:: Paramters in ``opac.yaml`` - ``star``

@@ -2,7 +2,7 @@ EXORAD_OPTIONS.h
 ^^^^^^^^^^^^^^^^
 
 The ``EXORAD_OPTIONS.h`` file is located in the code base of the ``exorad`` module and should be overwritten by a custom ``EXORAD_OPTIONS.h`` file in the ``code`` directory of a simulation.
-The ``EXORAD_OPTIONS.h`` file is used to set compile flags for ``exoradPRT/MITgcm``.
+The ``EXORAD_OPTIONS.h`` file is used to set compile flags for ``expeRT/MITgcm``.
 
 These compileflags are currently available:
 

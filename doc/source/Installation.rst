@@ -8,7 +8,7 @@ There are a few steps that should be carried out prior to the installation of ex
 1. Download and familiarise with `MITgcm <https://mitgcm.readthedocs.io/en/latest/>`_
 2. Get permission to the exorad repository
 3. Clone the exorad repository and move inside the repo.
-4. Checkout the ``exoradPRT`` branch: ``git checkout exoradPRT``
+4. Checkout the ``expeRT`` branch: ``git checkout exoradRT``
 5. run ``install_exorad.sh`` to link exorad into MITgcm
 6. Install `anaconda <https://www.anaconda.com/>`_
 7. create a virtual environment for exorad ``conda create -n exorad``
@@ -22,7 +22,7 @@ Install exorad
 MITgcm
 """"""
 
-To install exorad you will first need to install `MITgcm <https://mitgcm.readthedocs.io/en/latest/>`_. 
+To install exorad you will first need to install `MITgcm <https://mitgcm.readthedocs.io/en/latest/>`_.
 Follow the instructions in `MITgcm <https://mitgcm.readthedocs.io/en/latest/>`_ to download the code and to understand how ``MITgcm`` works.
 
 .. note::
@@ -41,16 +41,16 @@ exorad
 """"""
 .. note::
 
-    This guide only covers ``exoradPRT/MITgcm`` (Schneider et al. 2022) 
+    This guide only covers ``expeRT/MITgcm`` (Schneider et al. 2022)
 
 .. note::
 
-    Please contact `Aaron Schneider <mailto:aaron.schneider@nbi.ku.dk>`_ to get access to ``exoradPRT/MITgcm``. 
+    Please contact `Aaron Schneider <mailto:aaron.schneider@nbi.ku.dk>`_ to get access to ``expeRT/MITgcm``.
 
-The first installation step is to clone ``exoradPRT/MITgcm``:
+The first installation step is to clone ``expeRT/MITgcm``:
 
 .. code::
-    
+
     git clone https://github.com/exorad/exorad.git
 
 Next checkout the ``exoradRT`` branch:
@@ -59,7 +59,7 @@ Next checkout the ``exoradRT`` branch:
 
     git checkout exoradRT
 
-Link exorad to the MITgcm directory using the supplied ``install_exorad.sh`` script. 
+Link exorad to the MITgcm directory using the supplied ``install_exorad.sh`` script.
 
 .. code::
 
@@ -72,13 +72,13 @@ More information on how to use the script can be found using the ``-h`` argument
 
 Install python packages (6-9)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-``exoradPRT/MITgcm`` uses `petitRADTRANS <https://petitradtrans.readthedocs.io/en/latest/>`_ to create the opacity input files. 
+``expeRT/MITgcm`` uses `petitRADTRANS <https://petitradtrans.readthedocs.io/en/latest/>`_ to create the opacity input files.
 
-.. note:: 
+.. note::
 
     This guide bases on `anaconda <https://www.anaconda.com/>`_. Other python installations are possible as well.
 
-Install `anaconda <https://www.anaconda.com/>`_. Once installed, create a virtual environment for ``exoradPRT/MITgcm`` and ``petitRADTRANS``:
+Install `anaconda <https://www.anaconda.com/>`_. Once installed, create a virtual environment for ``expeRT/MITgcm`` and ``petitRADTRANS``:
 
 .. code::
 
@@ -90,21 +90,14 @@ Activate the environment using
 
     conda activate exorad
 
-Install ``petitRADTRANS`` and the preprocessing package of ``exoradPRT/MITgcm`` using 
+Install ``petitRADTRANS`` and the preprocessing package of ``expeRT/MITgcm`` using
 
 .. code::
 
     cd <directory of exorad repo>
     pip install -e exorad_opac
 
-The installation of ``exorad_opac`` will automatically trigger the installation of ``petitRADTRANS``. 
-The last step is then to install the opacity sources for ``petitRADTRANS``. 
+The installation of ``exorad_opac`` will automatically trigger the installation of ``petitRADTRANS``.
+The last step is then to install the opacity sources for ``petitRADTRANS``.
 
 .. important:: instructions for the installation of the opacity sources can be found `here <https://petitradtrans.readthedocs.io/en/latest/content/installation.html>`_.
-
-
-
-
-
-
-

@@ -1,7 +1,7 @@
 data.exo
 ^^^^^^^^
 
-The ``data.exo`` file is used to set parameters for the physics used in ``exoradPRT/MITgcm``.
+The ``data.exo`` file is used to set parameters for the physics used in ``expeRT/MITgcm``.
 
 A typical ``data.exo`` file may look like this:
 
@@ -49,14 +49,14 @@ A typical ``data.exo`` file may look like this:
      EXORAD_SIGMA_B=0.7,
      &
 
-The ``EXORAD_PARAMS`` section sets flags for the physics that should be used in ``exoradPRT/MITgcm``.
-If you want to use ``exoradPRT/MITgcm`` with full radiative transfer, you will need to set ``EXORAD_FULL`` to ``.TRUE.`` and ``EXORAD_NEWTON`` to ``.FALSE.``.
-``EXORAD_TYPE`` should always be ``GASY`` since ``ROCKY`` planets are not yet implemented in ``exoradPRT/MITgcm``.
+The ``EXORAD_PARAMS`` section sets flags for the physics that should be used in ``expeRT/MITgcm``.
+If you want to use ``expeRT/MITgcm`` with full radiative transfer, you will need to set ``EXORAD_FULL`` to ``.TRUE.`` and ``EXORAD_NEWTON`` to ``.FALSE.``.
+``EXORAD_TYPE`` should always be ``GASY`` since ``ROCKY`` planets are not yet implemented in ``expeRT/MITgcm``.
 ``EXORAD_LOW`` can be used to enforce temperature convergence to a specific temperature profile (as specified in ``data.exodeep``).
 This method is described in more detail in `Carone et al. (2020) <https://ui.adsabs.harvard.edu/abs/2020MNRAS.496.3582C/abstract>`_.
 
 The ``EXORAD_SPONGE`` section is used to set the parameters of the sponge layer.
-There are two types of sponge layers implemented in ``exoradPRT/MITgcm``: a soft and a hard sponge layer,
+There are two types of sponge layers implemented in ``expeRT/MITgcm``: a soft and a hard sponge layer,
 where the soft spongelayer forces the zonal velocity towards its zonal mean instead of to zero (hard sponge layer).
 You can switch between those by using the ``EXORAD_SPONGE_ZONAL`` flag (``.TRUE.`` uses the soft sponge layer, ``.FALSE.`` the hard).
 The magnitude of the sponge layer is set using ``EXORAD_KTOP``.

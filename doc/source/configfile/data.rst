@@ -1,7 +1,7 @@
 data
 ^^^^
 
-The data file of ``exoradPRT/MITgcm`` is identical to the datafile of ``MITgcm``.
+The data file of ``expeRT/MITgcm`` is identical to the datafile of ``MITgcm``.
 
 There are a few things that one should change when modelling different hot Jupiters:
 

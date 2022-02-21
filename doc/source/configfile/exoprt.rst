@@ -1,7 +1,7 @@
 data.exoprt
 ^^^^^^^^^^^
 
-The ``data.exoprt`` file is used to control the radiative transfer bit of ``exoradPRT/MITgcm``.
+The ``data.exoprt`` file is used to control the radiative transfer bit of ``expeRT/MITgcm``.
 This is an example file:
 
 .. code::

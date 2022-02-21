@@ -3,7 +3,7 @@ Usage
 
 Quick guide
 ^^^^^^^^^^^
-The easiest way to setup a new ``exoradPRT/MITgcm`` simulation is:
+The easiest way to setup a new ``expeRT/MITgcm`` simulation is:
 
 1. create a new folder for the simulation
 2. copy the ``code`` and ``input`` folder from the supplied ``exorad_build`` folder
@@ -28,7 +28,7 @@ The ``code`` folder includes all the mods that are nescessary for MITgcm to incl
 The ``input`` folder is the home of all config and input files. 
 The ``run`` and the ``build`` folder are used for output files and binary files respectively.
 
-You can use the ``exorad_build`` folder as an example to setup ``exoradPRT/MITgcm``. 
+You can use the ``exorad_build`` folder as an example to setup ``expeRT/MITgcm``. 
 
 .. code::
 
@@ -123,11 +123,11 @@ Compilation
 ^^^^^^^^^^^
 .. warning:: Do the above steps, before you compile
 
-Compilation of ``exoradPRT/MITgcm`` is not different than the standard ``MITgcm`` compilation.
+Compilation of ``expeRT/MITgcm`` is not different than the standard ``MITgcm`` compilation.
 The reader is referred to the ``MITgcm`` docs.
 
 Running
 ^^^^^^^
-Running exoradPRT/MITgcm is like running MITgcm.
+Running expeRT/MITgcm is like running MITgcm.
 The reader is referred to the ``MITgcm`` docs.
 

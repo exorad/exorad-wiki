@@ -24,4 +24,4 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`search`
 
-Copyright 2022 Aaron Schneider. Do not use exoradPRT/MITgcm without contacting me first. Feel free to contact me for any questions via `mail <mailto:Aaron.Schneider@nbi.ku.dk>`_.
+Copyright 2022 Aaron Schneider. Do not use expeRT/MITgcm without contacting me first. Feel free to contact me for any questions via `mail <mailto:Aaron.Schneider@nbi.ku.dk>`_.

@@ -14,6 +14,8 @@ This is an example file:
     # EXORAD_MAX_I_ITER_SCAT :: max. amount of iterations performed to converge the source function
     # EXORAD_MAX_REL_DELTA_S :: convergence criterion for the convergence of the source function
     # EXORAD_MIN_TEMP :: minimal temperature, where the GCM will stop forcing to cooler temperatures (we dont want negative temperatures)
+    # EXORAD_INTERP_METH :: interpolatation method of temperature to cell interfaces, if you set it to one, it will use the Bezier interpolation, else it will use a linear interpolation
+    # EXORAD_TINT :: interior temperature to force bottom boundary flux. If set to neg. values, it will not set the boundary fluxes.
 
      &EXORAD_PRT
      EXORAD_deltaT = 100.0,
@@ -22,6 +24,8 @@ This is an example file:
      EXORAD_MAX_I_ITER_SCAT = 500,
      EXORAD_MAX_REL_DELTA_S = 0.02,
      EXORAD_MIN_TEMP = 50.0,
+     EXORAD_INTERP_METH = 1,
+     EXORAD_TINT = -1.0,
      &
 
 Clearly, the most important parameter in this file is ``EXORAD_deltaT``, which sets the frequency of flux updates (the radiative timestep).
@@ -30,6 +34,10 @@ High values in ``EXORAD_deltaT`` may lead to incorrect radiative fluxes that wou
 .. note::
 
    If you encounter crashes in your model, you might want to lower the value of ``EXORAD_deltaT``.
+
+.. note::
+
+   ``EXORAD_INTERP_METH`` and ``EXORAD_TINT`` are new parameters. Handle with caution. Using ``EXORAD_INTERP_METH=1`` should increase the stability of the model.
 
 .. warning::
 

@@ -43,10 +43,13 @@ A typical ``data.exo`` file may look like this:
     #                Unit 1/days-1
     # EXORAD_SIGMA_B :: Sets vertical pressure [Pa] for lower boundary
     #                   Defined wrt lower bounary as specified in data
+    # EXORAD_FRIC_HEAT :: True if you want to convert the kinetic energy back
+    #                     into thermal energy
 
      &EXORAD_FRIC
      EXORAD_KF =1.0,
      EXORAD_SIGMA_B=0.7,
+     EXORAD_FRIC_HEAT=.TRUE.
      &
 
 The ``EXORAD_PARAMS`` section sets flags for the physics that should be used in ``expeRT/MITgcm``.

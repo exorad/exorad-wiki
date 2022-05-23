@@ -37,21 +37,6 @@ A typical ``data.exo`` file may look like this:
      EXORAD_DEITRICK_K_SPONGE=.FALSE.
      &
 
-    # LOWER BOUNDARY FRICTION
-    # Rayleigh friction prescription to U and V wind field
-    # EXORAD_KF :: sets friction time scale (the same for both U and V)
-    #                Unit 1/days-1
-    # EXORAD_SIGMA_B :: Sets vertical pressure [Pa] for lower boundary
-    #                   Defined wrt lower bounary as specified in data
-    # EXORAD_FRIC_HEAT :: True if you want to convert the kinetic energy back
-    #                     into thermal energy
-
-     &EXORAD_FRIC
-     EXORAD_KF =1.0,
-     EXORAD_SIGMA_B=0.7,
-     EXORAD_FRIC_HEAT=.TRUE.
-     &
-
 The ``EXORAD_PARAMS`` section sets flags for the physics that should be used in ``expeRT/MITgcm``.
 If you want to use ``expeRT/MITgcm`` with full radiative transfer, you will need to set ``EXORAD_FULL`` to ``.TRUE.`` and ``EXORAD_NEWTON`` to ``.FALSE.``.
 ``EXORAD_TYPE`` should always be ``GASY`` since ``ROCKY`` planets are not yet implemented in ``expeRT/MITgcm``.
@@ -63,9 +48,6 @@ There are two types of sponge layers implemented in ``expeRT/MITgcm``: a soft an
 where the soft spongelayer forces the zonal velocity towards its zonal mean instead of to zero (hard sponge layer).
 You can switch between those by using the ``EXORAD_SPONGE_ZONAL`` flag (``.TRUE.`` uses the soft sponge layer, ``.FALSE.`` the hard).
 The magnitude of the sponge layer is set using ``EXORAD_KTOP``.
-
-The ``EXORAD_FRIC`` section is used to control the strength of the boundary layer friction.
-Parameters are described above.
 
 .. warning::
 

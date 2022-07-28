@@ -101,7 +101,7 @@ Install `anaconda <https://www.anaconda.com/>`_. Once installed, create a virtua
 
 .. code::
 
-    conda env create -n exorad python=3 pip numpy
+    conda create -n exorad pip numpy python=3
 
 Activate the environment using
 

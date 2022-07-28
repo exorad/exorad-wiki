@@ -37,6 +37,14 @@ Once you downloaded ``MITgcm`` it is important to set the ``MITGCM_ROOTDIR`` env
 
 You can do so by appending the above line to your ``.zshrc`` / ``.bashrc`` / ``.bash_profile`` file.
 
+
+
+``MITgcm`` is still developed. To go to a version that is known to work with ``expeRT`` do the following (inside the ``MITgcm`` directory):
+
+.. code::
+
+   git checkout 8b41e6235cdfefca3b75a9c4c8cc300edbe9af64
+
 exorad
 """"""
 .. note::
@@ -47,11 +55,22 @@ exorad
 
     Please contact `Aaron Schneider <mailto:aaron.schneider@nbi.ku.dk>`_ to get access to ``expeRT/MITgcm``.
 
-The first installation step is to clone ``expeRT/MITgcm``:
+The first installation step is to clone ``expeRT/MITgcm`` (into any directory of your choice):
 
 .. code::
 
     git clone https://github.com/exorad/exorad.git
+
+.. note::
+
+    Most users prefer to clone private `repositories via ssh. <https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account>`_
+
+    You can then do
+
+    .. code::
+
+       git clone git@github.com:exorad/exorad.git
+
 
 Next checkout the ``exoradRT`` branch:
 

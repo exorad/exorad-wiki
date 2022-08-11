@@ -30,6 +30,10 @@ An example ``opac.yaml`` file can look like this:
       zero_eps: 2.0e-5
       p0: 700
 
+    chemistry:  # Section containing FeH and CO for chemical equilibrium in opacities
+      FeH: 0.0
+      CO: 0.55
+
     grid:  # Section containing arguments for the temperature gridding in the opacity grid
 
     prt:  # Section containing arguments of the Radtrans object of petitRADTRANS
@@ -85,6 +89,23 @@ All parameters are passed down to ``ic.py`` to the function ``calc_init_temperat
    * - more
      -
      - see the individual temperature functions (``isothermal``, ``heng``, ``guillot_global``, ``tp_parmentier``) in ``ic.py`` for more parameters
+
+Opacities are computed by assuming chemical equilibrium applying the equilibrium interpolator of petitRADTRANS.
+There are two parameters that you can change for that:
+
+ .. list-table:: Paramters in ``opac.yaml`` - ``chemistry``
+    :widths: auto
+    :header-rows: 1
+
+    * - Parameter
+      - Unit
+      - Meaning
+    * - ``CO``
+      - number
+      - C/O ratio (default=0.55 - solar)
+    * - ``FeH``
+      - log
+      - log metalicity (default=0.0 - solar)
 
 
 There are also a few parameters that can be tweaked for the temperature gridding in the final opacity grid.

@@ -2,12 +2,13 @@ opac.yaml
 ^^^^^^^^^
 The preproccessing of exorad using the python package ``exorad_opac`` requires a parameter file with the name ``opac.yaml`` in the ``input`` folder.
 
-The ``opac.yaml`` comes with four sections:
+The ``opac.yaml`` comes with three mandatory sections:
 
  - The ``star`` section sets the stellar parameters (as needed for the radiative transfer)
  - The ``temp_init`` section which specifies the input temperature profile for MITgcm
  - The ``press_init`` section which sets the vertical pressure grid of MITgcm
  - (optionally) The ``grid`` section which sets properties on the opacity grid
+ - (optionally) The ``chemistry`` section which sets properties on the chemistry for the opacities
  - (optionally) The ``prt`` section which sets arguments for ``petitRADTRANS`` (when creating the ``Radtrans`` object)
 
 Many parameters have defaults that ``exorad_opac`` will fallback to if those are not set in ``opac.yaml``.

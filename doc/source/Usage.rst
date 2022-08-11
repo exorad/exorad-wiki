@@ -15,20 +15,29 @@ The easiest way to setup a new ``expeRT/MITgcm`` simulation is:
 8. continue with changes to the input files (e.g., sponge layer settings, radiative timesteps, duration of simulation, ...)
 9. Have fun
 
-We will now continue in this guide to give detailed info about the individual steps 
+.. note::
+
+  An automated approach to get the parameters that need to be changed can be found here:
+
+  .. toctree::
+
+    notebooks/params
+
+
+We will now continue in this guide to give detailed info about the individual steps
 
 Preperation
 ^^^^^^^^^^^
-.. note:: 
+.. note::
 
     Please familiarise with `MITgcm <https://mitgcm.readthedocs.io/en/latest/>`_ beforehand
 
 A ``MITgcm`` run folder (see verification folders as an example) usually comes with 4 mandatory folders: ``code``, ``input``, ``run``, ``build``.
 The ``code`` folder includes all the mods that are nescessary for MITgcm to include ``exorad``.
-The ``input`` folder is the home of all config and input files. 
+The ``input`` folder is the home of all config and input files.
 The ``run`` and the ``build`` folder are used for output files and binary files respectively.
 
-You can use the ``exorad_build`` folder as an example to setup ``expeRT/MITgcm``. 
+You can use the ``exorad_build`` folder as an example to setup ``expeRT/MITgcm``.
 
 .. code::
 
@@ -130,4 +139,3 @@ Running
 ^^^^^^^
 Running expeRT/MITgcm is like running MITgcm.
 The reader is referred to the ``MITgcm`` docs.
-

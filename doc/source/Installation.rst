@@ -8,12 +8,11 @@ There are a few steps that should be carried out prior to the installation of ex
 1. Download and familiarise with `MITgcm <https://mitgcm.readthedocs.io/en/latest/>`_
 2. Get permission to the exorad repository
 3. Clone the exorad repository and move inside the repo.
-4. Checkout the ``expeRT`` branch: ``git checkout exoradRT``
-5. run ``install_exorad.sh`` to link exorad into MITgcm
-6. Install `anaconda <https://www.anaconda.com/>`_
-7. create a virtual environment for exorad ``conda create -n exorad``
-8. Install ``exorad_opac``
-9. Download and set the opacity sources for `petitRADTRANS <https://petitradtrans.readthedocs.io/en/latest/>`_ into this environment
+4. run ``install_exorad.sh`` to link exorad into MITgcm
+5. Install `anaconda <https://www.anaconda.com/>`_
+6. create a virtual environment for exorad ``conda create -n exorad``
+7. Install ``exorad_opac``
+8. Download and set the opacity sources for `petitRADTRANS <https://petitradtrans.readthedocs.io/en/latest/>`_ into this environment
 
 
 Install exorad
@@ -72,12 +71,6 @@ The first installation step is to clone ``expeRT/MITgcm`` (into any directory of
        git clone git@github.com:exorad/exorad.git
 
 
-Next checkout the ``exoradRT`` branch:
-
-.. code::
-
-    git checkout exoradRT
-
 Link exorad to the MITgcm directory using the supplied ``install_exorad.sh`` script.
 
 .. code::
@@ -102,6 +95,20 @@ Install `anaconda <https://www.anaconda.com/>`_. Once installed, create a virtua
 .. code::
 
     conda create -n exorad pip numpy python=3
+
+.. note::
+
+  We recommend to install a few more packages (do this instead of the above):
+
+  .. code::
+
+      conda env create -n exorad -f https://raw.githubusercontent.com/exorad/gcm_toolkit/main/ci/environment-3.10.yml
+      conda activate exorad
+      conda install -c conda-forge jupyterlab cartopy -y
+      pip install gcm-toolkit
+
+  This will automatically install `gcm_toolkit <https://gcm-toolkit.readthedocs.io>`_ and a few other useful packages for postprocessing of the data.
+
 
 Activate the environment using
 

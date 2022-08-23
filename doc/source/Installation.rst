@@ -76,7 +76,7 @@ Link exorad to the MITgcm directory using the supplied ``install_exorad.sh`` scr
 .. code::
 
     cd <directory of exorad repo>
-    sh install_exorad.sh
+    bash install_exorad.sh
 
 The script comes with an option to prettify the exorad code (using `findent <https://sourceforge.net/projects/findent/>`_).
 More information on how to use the script can be found using the ``-h`` argument.

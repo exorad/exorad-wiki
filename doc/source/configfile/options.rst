@@ -20,5 +20,5 @@ These compileflags are currently available:
      - allow for NG acceleration to converge the source function (test this if you have issues to converge the source fct)
    * - ``ALLOW_EXORAD_PRINT``
      - debugging mode with lots of information printed out to STDOUT
-
-
+   * - ``ALLOW_EXORAD_CA``
+     - Use convergence acceleration (disable if not used!)

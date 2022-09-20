@@ -14,10 +14,24 @@ The details of this procedure can be found in the Appendix of Schneider et al. (
 
     Convergence acceleration is activated/deactivated by setting the following two parameters:
 
-    ``input/data.exo``: ``EXORAD_DEEP_CONVERGENCE =.TRUE.``
+    .. list-table::
+       :widths: auto
+       :header-rows: 1
 
-    ``code/EXORAD_OPTIONS.h``: ``#define ALLOW_EXORAD_CA`` (pre compilation)
+       * - File
+         - Parameter
+         - Warning
+       * - ``input/data.exo``
+         - ``EXORAD_DEEP_CONVERGENCE =.TRUE.``
+         - only enable when actually doing the CA
+       * - ``code/EXORAD_OPTIONS.h``
+         - ``#define ALLOW_EXORAD_CA``
+         - pre compilation
 
+The CA is used whenever ``EXORAD_DEEP_CONVERGENCE =.TRUE.`` is set to true and is then used within the first iterations of the GCM run.
+Make sure to only use it when you actually want to use it and set ``EXORAD_DEEP_CONVERGENCE =.FALSE.`` in any other case!
+
+The CA is intended to be used, when you restart the GCM from a pickupfile and then disabled after!
 
 data.exoca
 ^^^^^^^^^^

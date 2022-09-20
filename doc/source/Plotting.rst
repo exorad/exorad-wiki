@@ -1,5 +1,4 @@
 Output
 ------
 
-.. note:: This is going to be extended soon
-
+Use `gcm_toolkit <https://gcm-toolkit.readthedocs.io>`_ and follow the examples within there.

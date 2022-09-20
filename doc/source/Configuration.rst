@@ -10,6 +10,7 @@ There are a few files which need to be changed depending on the planet that is t
    configfile/opac
    configfile/exo
    configfile/exoprt
-   configfile/fric   
+   configfile/exoca
+   configfile/fric
    configfile/data
    configfile/options

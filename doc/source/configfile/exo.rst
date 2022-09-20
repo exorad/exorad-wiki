@@ -12,12 +12,14 @@ A typical ``data.exo`` file may look like this:
     # EXORAD_FULL :: flag to switch on/off full radiative transfer
     # EXORAD_LOW :: flag to enforce special treatment of lower layers
     # EXORAD_TYPE :: flag to choose type of planet, GASY or ROCK (Char*4)
+    # EXORAD_DEEP_CONVERGENCE :: Use convergence acceleration or not (warning, only set if you really know what you do!)
 
      &EXORAD_PARAMS
      EXORAD_NEWTON =.FALSE.,
      EXORAD_FULL =.TRUE.,
      EXORAD_LOW =.FALSE.,
      EXORAD_TYPE ='GASY',
+     EXORAD_DEEP_CONVERGENCE =.FALSE.,
      &
 
     # SPONGE LAYER SETTING

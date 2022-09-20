@@ -36,7 +36,9 @@ The CA is intended to be used, when you restart the GCM from a pickupfile and th
 data.exoca
 ^^^^^^^^^^
 
-The data.exoca file controls the parameters used for the forcing towards the goal theta.
+You need a ``data.exoca`` file in the input folder that controls the parameters used for the forcing towards the goal theta.
+
+You can find an example with some random CA parameters (used for testing purposes) in the respective verification folder (CA) in the github repo of exorad.
 
 Here is an example (used in Schneider et al. 2022b):
 

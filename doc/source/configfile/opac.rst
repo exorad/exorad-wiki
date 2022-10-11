@@ -25,6 +25,7 @@ An example ``opac.yaml`` file can look like this:
 
     temp_init:   # Section containing the temperature init of MITgcm
       theta_deep: 1400
+      warn_theta_inversion: False
 
     press_init:  # Section containing the vertical grid of MITgcm
       np_log: 41
@@ -75,6 +76,9 @@ All parameters are passed down to ``ic.py`` to the function ``calc_init_temperat
    * - ``theta_deep``
      - K
      - Temperature of the initial temperature profile at 1 bar (adiabat correction)
+   * - ``warn_theta_inversion``
+     - bool
+     - default to ``False``. If true, it will fail, when there is an inversion in the temperature profile at depth.
    * - ``profile``
      - string
      - "guillot", "parmentier", "heng" or "isothermal" for guillot2010 or parmentier2015 or heng2011 or isothermal models respectively.

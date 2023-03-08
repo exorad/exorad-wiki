@@ -12,7 +12,7 @@ The ``opac.yaml`` comes with three mandatory sections:
  - (optionally) The ``prt`` section which sets arguments for ``petitRADTRANS`` (when creating the ``Radtrans`` object)
 
 Many parameters have defaults that ``exorad_opac`` will fallback to if those are not set in ``opac.yaml``.
-Checkout ``DEFAULT_<name>`` values in ``run_utils.py``.
+Checkout ``DEFAULT_<name>`` values in ``config.py``.
 
 An example ``opac.yaml`` file can look like this:
 
@@ -22,6 +22,7 @@ An example ``opac.yaml`` file can look like this:
       Tstar: 4520
       Rstar: 0.667
       semimajoraxis: 0.01526
+      flux_scaling: BB
 
     temp_init:   # Section containing the temperature init of MITgcm
       theta_deep: 1400
@@ -35,6 +36,7 @@ An example ``opac.yaml`` file can look like this:
     chemistry:  # Section containing FeH and CO for chemical equilibrium in opacities
       FeH: 0.0
       CO: 0.55
+      use_temp_init: True
 
     grid:  # Section containing arguments for the temperature gridding in the opacity grid
 
@@ -60,6 +62,11 @@ The ``star`` section in ``opac.yaml`` helps to compute that.
    * - ``semimajoraxis``
      - AU
      - orbital seperation of planet
+   * -  ``flux_scaling``
+     - str, or erg/cm^2/s/Hz
+     - the scaling of the stellar intensity. Per default it scales to a black body, can be a specific value as well
+ 
+ 
 
 There is a large variety on possible input parameters for the initial temperature profile.
 The default temperature profile will equal to the profile used in Schneider et al. (2022) with the minimum parameter to set: ``theta_deep``.
@@ -111,6 +118,9 @@ There are two parameters that you can change for that:
     * - ``FeH``
       - log
       - log metalicity (default=0.0 - solar)
+    * - ``use_temp_init``
+      - bool
+      - Use the initial temperature profile to calculate the MMW and cp
 
 
 There are also a few parameters that can be tweaked for the temperature gridding in the final opacity grid.
@@ -125,7 +135,10 @@ These things are set in the ``grid`` section of ``opac.yaml``.
      - Meaning
    * - ``tmin``
      - K
-     - Minimal temperature of the precalculated opacity grid
+     - Minimal temperature of the precalculated opacity grid 
+   * - ``tmax``
+     - K
+     - Maximum temperature of the precalculated opacity grid
    * - ``tresolution``
      - int
      - Temperatureresolution of the precalculated opacity grid (e.g., how many T-points)

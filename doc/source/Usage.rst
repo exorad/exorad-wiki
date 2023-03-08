@@ -128,6 +128,14 @@ This would give you two binaries of MITgcm which you could then both use (e.g., 
    exorad_opac_create -R S1
    ... compile and rename MITgcm binary ...
 
+
+If you want to use ``exorad_opac`` in a way that is beyond the possibilities of the ``exorad_opac_create`` command, you might want to have a look at this Tutorial:
+  
+  .. toctree::
+
+    notebooks/exorad_opac_custom
+
+
 Compilation
 ^^^^^^^^^^^
 .. warning:: Do the above steps, before you compile

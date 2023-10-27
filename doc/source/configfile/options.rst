@@ -22,3 +22,5 @@ These compileflags are currently available:
      - debugging mode with lots of information printed out to STDOUT
    * - ``ALLOW_EXORAD_CA``
      - Use convergence acceleration (disable if not used!)
+   * - ``ALLOW_EXORAD_MIX``
+     - Use on the fly k-table mixing (slower than premixed k-tables) 

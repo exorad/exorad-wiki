@@ -28,6 +28,16 @@ This is an example file:
      EXORAD_TINT = -1.0,
      &
 
+
+    C-- Chemistry in radiative transfer
+    # EXORAD_MIX_METHOD       :: Opacity mixing method, if mixing is enabled (ALLOW_EXORAD_MIX), -1 (or anything else) is RORR, 0 is adding up, 1 is ML mixing, 2 is AEE
+    # EXORAD_CHEM_METHOD      :: disequilibrium chemistry method to use (1=rainout, choose anything else for no diseq)
+     &EXORAD_CHEM
+     EXORAD_MIX_METHOD = -1
+     EXORAD_CHEM_METHOD = -1
+     &
+
+
 Clearly, the most important parameter in this file is ``EXORAD_deltaT``, which sets the frequency of flux updates (the radiative timestep).
 High values in ``EXORAD_deltaT`` may lead to incorrect radiative fluxes that would cause the model to heat/cool to unphysical temperatures, which could cause crashes.
 
@@ -48,3 +58,8 @@ You can turn on or off scattering with the ``EXORAD_SCATTERING`` flag. The conve
 For more information on the convergence of the source function see Schneider et al. (2022).
 ``EXORAD_INTERP_STEP`` controls whether you interpolate fluxes horizontally or not.
 For more information on the interpolation of fluxes see Schneider et al. (2022).
+
+All parameters in the  ``EXORAD_CHEM`` namelist are only used if ``#define ALLOW_EXORAD_MIX`` has been set in ``code/EXORAD_OPTIONS.h``. 
+If this wasn't set, it will as default use the premixed opacity tables.
+You can decide with ``EXORAD_MIX_METHOD`` which method to use for the k-table mixing. 
+See Schneider et al. (2023) for a discussion of the implemented methods.

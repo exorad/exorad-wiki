@@ -1,12 +1,14 @@
 Usage
 -----
 
+For seting up ``expeRT/MITgcm`` on a cluster see also the `cluster setup <https://github.com/exorad/clustersetup>`_ docs.
+
 Quick guide
 ^^^^^^^^^^^
 The easiest way to setup a new ``expeRT/MITgcm`` simulation is:
 
 1. create a new folder for the simulation
-2. copy the ``code`` and ``input`` folder from the supplied ``exorad_build`` folder
+2. copy the ``code`` and ``input`` folder from the HD2 experiment in the ``verification`` folder
 3. change ``opac.yaml`` in the input folder
 4. create opacitys using the command ``exorad_opac_create`` in the simulation folder (more below)
 5. check the temperature profile using ``exorad_plot_ic``
@@ -67,13 +69,20 @@ You can use the ``exorad_build`` folder as an example to setup ``expeRT/MITgcm``
     │   └── packages_write_pickup.F
     ├── input  # configuration and input files
     │   ├── data            # standard configuration file
-    │   ├── data.exo        # parameters for exorad
-    │   ├── data.exprt      # parameters for radiative transfer in exorad
+    │   ├── data.exo        # global parameters for exorad, including spongelayer
+    │   ├── data.exoprt     # parameters for radiative transfer in exorad
+    │   ├── data.exorad     # only used for newtonian cooling
+    │   ├── data.exofric    # parameters for friction
+    │   ├── ml_coeff_0.data # weights for the DeepSet mixing
+    │   ├── ml_coeff_0.meta # 
+    │   ├── ml_coeff_1.data # 
+    │   ├── ml_coeff_1.meta # 
     │   ├── opac.yaml       # parameters for init of opacity and temperature
     │   └── ...
     ├── run     # contains all the files that are created during run
     └── build   # used to build the MITgcm binary
 .. Created with tree.nathanfriend.io
+
 
 Preprocessing
 ^^^^^^^^^^^^^
@@ -135,13 +144,27 @@ If you want to use ``exorad_opac`` in a way that is beyond the possibilities of 
 
     notebooks/exorad_opac_custom
 
-
 Compilation
 ^^^^^^^^^^^
 .. warning:: Do the above steps, before you compile
 
 Compilation of ``expeRT/MITgcm`` is not different than the standard ``MITgcm`` compilation.
 The reader is referred to the ``MITgcm`` docs.
+
+
+Opacity mixing
+^^^^^^^^^^^^^^
+If you want to use the opacity mixing feature of expeRT/MITgcm (see Schneider et al. 2023, in review), you may once create weights for the opacity mixing. 
+Please read the paper and the instructions in the `opac mixer docs <https://opacmixer.readthedocs.io/en/latest/>`_. 
+Once you obtained the weights and exported them (using the ``export`` function of the ``emulator``), you can copy them to the input folder from which they will then be available to the code.
+
+This step only needs to be done once and the weights should in principle work with any chemical composition or wavelength resolution (read the paper to understand what it does and for a discussion).
+
+The opacity mixing is disabled by default and needs to be enabled in ``code/EXORAD_OPTIONS.h`` by setting ``#define ALLOW_EXORAD_MIX``.
+The preprocessing, however, is the same. The preprocessing (``exorad_opac_create``) creates the individual opacity files for mixing alongside an eq.chem. abundancy grid and a premixed grid (used when ``#undef ALLOW_EXORAD_MIX``).
+
+The type of mixing is set in the ``data.exoprt`` file with the variable ``EXORAD_MIX_METHOD``.
+
 
 Running
 ^^^^^^^

@@ -142,6 +142,10 @@ These things are set in the ``grid`` section of ``opac.yaml``.
    * - ``tresolution``
      - int
      - Temperatureresolution of the precalculated opacity grid (e.g., how many T-points)
+   * - ``interpolate_chem``
+     - bool
+     - If the petitRADTRANS poormans interpolation scheme should be used for premixing. Default False, which means that easychem is used (takes a bit longer)
+ 
 
 The vertical coordinate in MITgcm can be set via the ``press_init`` section. These are the arguments:
 

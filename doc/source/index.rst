@@ -17,6 +17,7 @@ A fast and versatile non gray 3D GCM aimed for simulating hot gas giants.
    Configuration
    CA
    Plotting
+   Changelog
 
 
 
